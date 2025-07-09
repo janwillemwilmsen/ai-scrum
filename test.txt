@@ -1,0 +1,11 @@
+
+
+docker run -d -p 11235:11235 --name crawl4ai --env-file .llm.env  --shm-size=1g  unclecode/crawl4ai:latest
+docker run -d -p 11235:11235 --name crawl4ai --shm-size=1g  unclecode/crawl4ai:latest
+
+
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python scrum_scraper.py
+deactivate
